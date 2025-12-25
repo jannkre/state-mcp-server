@@ -1,7 +1,6 @@
 # my_mcp_server.py
 from fastmcp.utilities.types import Image, Audio, File
-from mcp.server.fastmcp import FastMCP
-from starlette.responses import JSONResponse
+from fastmcp import FastMCP
 
 mcp = FastMCP(host="0.0.0.0", stateless_http=True)
 
