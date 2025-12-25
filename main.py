@@ -2,7 +2,7 @@
 from fastmcp.utilities.types import Image, Audio, File
 from fastmcp import FastMCP
 
-mcp = FastMCP(host="0.0.0.0", stateless_http=True)
+mcp = FastMCP(name="MyDrawingStateServer")
 
 @mcp.tool()
 def add_numbers(a: int, b: int) -> int:
@@ -22,7 +22,7 @@ def greet_user(name: str) -> str:
 @mcp.tool()
 def get_chart() -> Image:
     """Generate a chart image."""
-    return {"image": Image(path="chart.png").to_image_content()}
+    return Image(path="chart.png")
 
 
 if __name__ == "__main__":
