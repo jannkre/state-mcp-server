@@ -10,9 +10,7 @@ def get_drawing() -> Image:
     """Get the current drawing state."""
     image_url = "https://math-drawings.s3.eu-central-1.amazonaws.com/current_state.png"
     response = requests.get(image_url)
-    with open("drawing.png", "wb") as f:
-        f.write(response.content)
-    return Image(path="drawing.png")
+    return Image(data=response.content, format="png")
 
 
 if __name__ == "__main__":
